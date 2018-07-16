@@ -1,0 +1,35 @@
+
+
+#include <SI_EFM8LB1_Register_Enums.h>
+#include "EFM8LB1_SMBus_MasterMultibyte.h"
+#include "EFM8LB1_I2C_Slave.h"
+
+
+
+SI_INTERRUPT (I2C0_ISR, I2C0_IRQn)
+{
+
+
+}
+
+
+SI_INTERRUPT (SMBUS0_ISR, SMBUS0_IRQn)
+{
+
+}
+
+SI_INTERRUPT (TIMER3_ISR, TIMER3_IRQn)
+{
+
+}
+
+SI_INTERRUPT (TIMER4_ISR, TIMER4_IRQn)
+{
+
+}
+
+SI_INTERRUPT (ADC0EOC_ISR, ADC0EOC_IRQn)
+{
+
+}
+

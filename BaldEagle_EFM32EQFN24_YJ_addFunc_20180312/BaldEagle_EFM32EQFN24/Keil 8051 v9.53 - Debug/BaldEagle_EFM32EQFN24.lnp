@@ -1,7 +1,0 @@
-"./src/BaldEagle_EFM32EQFN24_main.OBJ",
-"./src/EFM8LB1_Flash.OBJ",
-"./src/InitDevice.OBJ",
-"./src/Interrupts.OBJ",
-"./src/SILABS_STARTUP.OBJ",
-"./src/uart_1.OBJ"
-TO "BALDEAGLE_EFM32EQFN24.OMF.CRBUILD" REMOVEUNUSED PRINT(.\BaldEagle_EFM32EQFN24.m51) PAGEWIDTH (120) PAGELENGTH (65) CLASSES( ECODE(C:0x0 - C:0x7ffe), HCONST(C:0x0 - C:0x7ffe), XDATA(X:0x0 - X:0x7ff), HDATA(X:0x0 - X:0x7ff))
