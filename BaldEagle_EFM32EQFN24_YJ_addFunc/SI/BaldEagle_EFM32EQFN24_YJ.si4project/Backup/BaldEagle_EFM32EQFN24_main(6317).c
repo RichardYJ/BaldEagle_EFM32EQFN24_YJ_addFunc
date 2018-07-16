@@ -11,7 +11,7 @@
 #include "EFM8LB1_Flash.h"
 
 //#define TEST_I2C2
-#define MY_PRINTF_EN 1
+#define MY_PRINTF_EN 0
 #define DYCALCC 1
 #define ONE ((uint16_t)1)
 #define SCALE                     100L // Scale for temp calculations
@@ -1496,8 +1496,8 @@ void main(void) {
 
 	enter_BusFreeMode_from_RESET();
 	UART1_initStdio(72000000, 115200);		//YJ20180209
-//	if(0==(RSTSRC&(0x1<<4)))
-//		RSTSRC|=0x1<<4;
+	if(0==(RSTSRC&(0x1<<4)))
+		RSTSRC|=0x1<<4;
 //	DISP_EN = DISP_BC_DRIVEN;
 
 
