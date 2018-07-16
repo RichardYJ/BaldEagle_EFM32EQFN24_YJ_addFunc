@@ -1,0 +1,27 @@
+---- SMB0_I2C_MasterRead Matches (26 in 3 files) ----
+BaldEagle_EFM32EQFN24_main.c (src) line 799 : uint16_t SMB0_I2C_MasterRead(uint16_t RegAddr) {
+SMB0_I2C_MasterRead in BaldEagle_EFM32EQFN24_main.c (src) : 		printf("SMB0_I2C_MasterRead  ERROR!!!!!!");
+GE_I2C2_bitset in BaldEagle_EFM32EQFN24_main.c (src) : 	uint16_t readout = SMB0_I2C_MasterRead(addr);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0x9811);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0x9811);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			TotalError = SMB0_I2C_MasterRead(0x9f0f);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0x9811);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			//SMB0_I2C_MasterRead(FW_regAddr_base[0] + i);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterRead(FW_regAddr_base[0] + 14);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(FW_regAddr_base[0] + 15);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			status = SMB0_I2C_MasterRead(FW_regAddr_base[0] + 15);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(FW_regAddr_base[0] + 15);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			status = SMB0_I2C_MasterRead(FW_regAddr_base[0] + 15);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 	status = SMB0_I2C_MasterRead(0x9814);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 				rValue = SMB0_I2C_MasterRead( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75] );
+EFM8LB1_SMBus_MasterMultibyte.h (inc) line 58 : extern uint16_t SMB0_I2C_MasterRead(uint16_t RegAddr);
+SI_INTERRUPT in Interrupts.c (src) : 						SMB0_I2C_MasterRead( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75] );
