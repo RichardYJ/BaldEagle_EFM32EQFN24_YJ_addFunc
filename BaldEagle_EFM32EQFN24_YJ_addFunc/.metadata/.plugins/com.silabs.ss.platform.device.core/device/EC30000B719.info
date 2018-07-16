@@ -1,0 +1,4 @@
+protectFromDetectionUpdates=false
+label=USB Debug Adapter (EC30000B719)
+boardOverrides {
+}

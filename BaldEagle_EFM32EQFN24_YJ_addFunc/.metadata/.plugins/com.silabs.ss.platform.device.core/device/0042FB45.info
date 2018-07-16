@@ -1,0 +1,4 @@
+protectFromDetectionUpdates=false
+label=CP2112 HID USB-to-SMBus Bridge (ID:0) (0042FB45)
+boardOverrides {
+}

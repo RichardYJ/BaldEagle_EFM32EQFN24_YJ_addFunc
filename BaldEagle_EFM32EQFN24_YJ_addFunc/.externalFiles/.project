@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>.externalFiles</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>C__SiliconLabs_SimplicityStudio_v4_developer_sdks_8_51_v4.1.1_Device_EFM8LB1_inc_SI_EFM8LB1_Defs.h</name>
+			<type>1</type>
+			<location>C:/SiliconLabs/SimplicityStudio/v4/developer/sdks/8051/v4.1.1/Device/EFM8LB1/inc/SI_EFM8LB1_Defs.h</location>
+		</link>
+		<link>
+			<name>D__WorkSpace_MyCode_SYNC_BaldEagle_EFM3_EQFN_4_YJ_addFunc_bak_BaldEagle_EFM3_EQFN_4_src_InitDevice.c</name>
+			<type>1</type>
+			<location>D:/WorkSpace/MyCode/SYNC/BaldEagle_EFM32EQFN24_YJ_addFunc_bak/BaldEagle_EFM32EQFN24/src/InitDevice.c</location>
+		</link>
+	</linkedResources>
+</projectDescription>
