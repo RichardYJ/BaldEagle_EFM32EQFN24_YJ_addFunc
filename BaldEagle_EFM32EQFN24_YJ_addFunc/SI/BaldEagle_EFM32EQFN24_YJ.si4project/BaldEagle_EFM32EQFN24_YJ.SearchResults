@@ -1,29 +1,3 @@
----- MY_PRINTF_EN Matches (28 in 1 files) ----
-BaldEagle_EFM32EQFN24_main.c (src) line 14 : #define MY_PRINTF_EN 1
-SMB0_I2C_MasterWrite in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-SMB0_I2C_MasterWrite in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-SMB0_I2C_MasterRead in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-SMB0_I2C_MasterRead in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1	  //yj20170414
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if MY_PRINTF_EN == 1
+---- USE_EEPROM Matches (2 in 1 files) ----
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if USE_EEPROM
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : #if USE_EEPROM 	

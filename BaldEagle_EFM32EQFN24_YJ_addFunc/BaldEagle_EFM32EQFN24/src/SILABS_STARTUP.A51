@@ -133,6 +133,8 @@ $IF (SILABS_STARTUP = 1)
 EXTRN	CODE (SiLabs_Startup)
                 LCALL 	SiLabs_Startup
 $ENDIF
+
+;================================================have some problems,could be written by c in function SiLabs_Startup
 st:				mov 0FFH,#80H
 				NOP
 				NOP
@@ -143,6 +145,7 @@ st:				mov 0FFH,#80H
 				mov 0EFH,#02H
 				mov 0D9H,#40H
 ed:				NOP
+;================================================
 
 IF IDATALEN <> 0
                 MOV     R0,#IDATALEN - 1

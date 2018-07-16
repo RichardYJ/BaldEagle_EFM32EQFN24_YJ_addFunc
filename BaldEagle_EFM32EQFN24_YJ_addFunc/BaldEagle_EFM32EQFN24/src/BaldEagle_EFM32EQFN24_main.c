@@ -44,7 +44,7 @@ SI_LOCATED_VARIABLE_NO_INIT(TEMPSENSOR_0C_HIGH, uint8_t const, SI_SEG_CODE, TEMP
 //-----------------------------------------------------------------------------
 // Global Variables
 //-----------------------------------------------------------------------------
-SI_LOCATED_VARIABLE_NO_INIT(flash_write_array[512], uint8_t, SI_SEG_XDATA, START_ADDRESS);
+SI_LOCATED_VARIABLE_NO_INIT(FlashRomBuff[512], uint8_t, SI_SEG_XDATA, START_ADDRESS);
 
 
 volatile bool SMB_BUSY;
@@ -525,6 +525,48 @@ consts uint8_t script_content[] = {
 		, 0x80, 0x61, 0x3C, 0x20, 0x81, 0x61, 0x34, 0x20, 0x82, 0x61, 0x34,
 		0x20, 0x83, 0x61, 0x3C, 0x20, 0x84, 0x61, 0x7C, 0x20, 0x85, 0x61, 0x34,
 		0x20, 0x86, 0x61, 0x34, 0x20, 0x87, 0x61, 0x34, 0x20 };
+
+
+
+uint8_t EROM_script_content[] = {
+	//RX CLTE
+	 0x80,0x4e ,0x08,0x00
+	,0x81,0x4e ,0x08,0x00
+	,0x82,0x4e ,0x08,0x00
+	,0x83,0x4e ,0x08,0x00
+	,0x84,0x4e ,0x08,0x00
+	,0x85,0x4e ,0x08,0x00
+	,0x86,0x4e ,0x08,0x00
+	,0x87,0x4e ,0x08,0x00
+	//main cursor
+	,0x80,0xa7 ,0x14,0x00  
+	,0x81,0xa7 ,0x14,0x00
+	,0x82,0xa7 ,0x14,0x00
+	,0x83,0xa7 ,0x14,0x00
+	,0x84,0xa7 ,0x12,0x00
+	,0x85,0xa7 ,0x12,0x00
+	,0x86,0xa7 ,0x12,0x00
+	,0x87,0xa7 ,0x12,0x00
+	//pre cursor
+	,0x80,0xa8 ,0x3c,0x00  
+	,0x81,0xa8 ,0x3c,0x00
+	,0x82,0xa8 ,0x3c,0x00
+	,0x83,0xa8 ,0x3c,0x00
+	,0x84,0xa8 ,0x3f,0x00
+	,0x85,0xa8 ,0x3f,0x00
+	,0x86,0xa8 ,0x3f,0x00
+	,0x87,0xa8 ,0x3f,0x00
+	//post cursor
+	,0x80,0xa6 ,0x3c,0x00  
+	,0x81,0xa6 ,0x3c,0x00
+	,0x82,0xa6 ,0x3c,0x00
+	,0x83,0xa6 ,0x3c,0x00
+	,0x84,0xa6 ,0x3c,0x00
+	,0x85,0xa6 ,0x3c,0x00
+	,0x86,0xa6 ,0x3c,0x00
+	,0x87,0xa6 ,0x3c,0x00
+};
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 void SiLabs_Startup(void) {
@@ -573,8 +615,8 @@ void test_tempsensor (void)
   {
     PCON0 |= PCON0_IDLE__IDLE;       // Put the CPU in Idle mode while waiting
     // for conversions to complete
-      if(CONV_COMPLETE)
-      {
+	if(CONV_COMPLETE)
+	{
         // Calculate the scaled temperature using the formula provided in the datasheet
         temp_scaled = (((int32_t) ADC_AVG - tempsensor_0c) * SCALE) / 28;
 
@@ -838,6 +880,29 @@ void GE_set_polarity(void) {
 
 }
 
+void GE_set_polarity_Tx(uint8_t prty)
+{
+	uint8_t i;
+	uint8_t tmp= prty;
+	uint16_t reg=0x80a0;
+
+	for( i = 0;i < 8; i++ )
+	{
+		if(tmp & 0x01)  GE_I2C2_bitset(reg|(i<<8),0x1,7,1);  //  addr = 0x80A0+0x0i00,  [7] =  1 = reverse
+		tmp = tmp >> 1;     //0x80A0 -> 0x87A0  B0 -> A3
+	}
+    
+}
+
+void GE_state_reset(void)
+{
+    uint16_t i;
+    
+	for(i=0;i<8;i++) {
+		GE_I2C2_bitset(0x80A1+i*0x0100,0x1,11,1);  //  0x8x8a[11]->1
+		GE_I2C2_bitset(0x80A1+i*0x0100,0x0,11,1);  //  0x8x8a[11]->0
+	}     
+}
 
 
 #if 0
@@ -954,6 +1019,13 @@ void PIC_MAIN() {
 	int16_t len_script;
 	uint16_t rValue;
 
+	int32_t temp_scaled;				// Stores scaled temperature value
+	int32_t temp_whole; 				// Stores unscaled whole number portion
+									// of temperature for output.
+	uint16_t temp_frac;				 // Stores unscaled decimal portion of
+									// temperature for output.
+
+	uint16_t tempsensor_0c; 			// Stores the temp sensor cal value at
 
 
 
@@ -995,7 +1067,14 @@ void PIC_MAIN() {
 	do{
 		TotalError = SMB0_I2C_MasterRead(0);
 		if(0x204c!=TotalError)
-			printf("\r\n0¦Ì??¡¤?¦Ì?a¡êo0x%04x\r\n", TotalError);
+			printf("\r\n Address 0's value error:  0x%04x\r\n", TotalError);
+
+
+		SMB0_I2C_MasterWrite(0x9811, 0xabcd);		//software reset
+
+		TotalError = SMB0_I2C_MasterRead(0x9811);
+		if(0xabcd!=TotalError)
+			printf("\r\n Address 0x9811 's value error: 0x%04x\r\n", TotalError);
 	}while(0);
 	if(0){
 	//	TotalError = sizeof(uint32_t);
@@ -1017,7 +1096,7 @@ void PIC_MAIN() {
 		}
 	}
 #endif
-	while(1);		//YJ20180209
+//	while(1);		//YJ20180209
 
 	len = get_int32(b_data + 6);  // 0x00, 0x00, 0x15, 0x64	   12/2
 #if MY_PRINTF_EN == 1
@@ -1063,7 +1142,7 @@ void PIC_MAIN() {
 	//load script
 ///    GE_reload_default();
 
-
+#if 1
 #if DYCALCC==1
 	for (i = 128; i <= 190; i++) {
 		iCC_BASE += EEPROM_Buffer[i];
@@ -1075,6 +1154,62 @@ void PIC_MAIN() {
 	}
 	EEPROM_Buffer[191] = iCC_BASE & 0xff;
 	EEPROM_Buffer[223] = iCC_EXT & 0xff;
+#endif
+#else			//merged from others
+#if DYCALCC==1
+	for (i=128;i<=183;i++)     //load True EE[128~255] to Emulated EE page 0
+	{
+        if (FlashRomBuff[1]==0xff)
+        {
+           iCC_BASE+=EEPROM_Buffer[i];
+		}
+        else
+        {
+            EEPROM_Buffer[i] =  FlashRomBuff[i];
+            iCC_BASE+=EEPROM_Buffer[i];
+		}
+	}
+    for (i=184;i<=185;i++)     
+	{
+        iCC_BASE+=EEPROM_Buffer[i];
+	}
+    for (i=186;i<=190;i++)     
+	{
+        if (FlashRomBuff[1]==0xff)
+        {
+           iCC_BASE+=EEPROM_Buffer[i];
+		}
+        else
+        {
+            EEPROM_Buffer[i] =  FlashRomBuff[i];
+            iCC_BASE+=EEPROM_Buffer[i];
+		}
+	}
+    
+	for (i=192;i<=222;i++)
+	{
+        if (FlashRomBuff[1]==0xff)
+        {
+           iCC_EXT+=EEPROM_Buffer[i];
+		}
+        else
+        {
+            EEPROM_Buffer[i] =  FlashRomBuff[i];
+            iCC_EXT+=EEPROM_Buffer[i];
+        }
+		
+	}       
+	EEPROM_Buffer[191]=iCC_BASE&0xff;
+	EEPROM_Buffer[223]=iCC_EXT&0xff;
+    
+    for (i=224;i<=255;i++)
+	{
+        if (FlashRomBuff[1]!=0xff)
+        {
+            EEPROM_Buffer[i] =  FlashRomBuff[i];
+        }		
+	}
+#endif
 #endif
 
 #if 1
@@ -1089,13 +1224,18 @@ void PIC_MAIN() {
 	do{
 		TotalError = SMB0_I2C_MasterRead(0);
 		if(0x204c!=TotalError)
-			printf("\r\n0¦Ì??¡¤?¦Ì?a¡êo0x%04x\r\n", TotalError);
-		else
-			break;
+			printf("\r\n Address 0's value error:  0x%04x\r\n", TotalError);
+
+
+		SMB0_I2C_MasterWrite(0x9811, 0xabcd);		//software reset
+
+		TotalError = SMB0_I2C_MasterRead(0x9811);
+		if(0xabcd!=TotalError)
+			printf("\r\n Address 0x9811 's value error: 0x%04x\r\n", TotalError);
 	}while(0);
 	TotalError = 0;
 
-#if 1
+#if 0
 	//golden eagle?firmware?????20170330
 	printf("Load Firmware Start......");
 
@@ -1282,6 +1422,7 @@ printf("Load Firmware End......");
 
 //load firmware
 #endif
+	//old firmware location!//
 
 	len_script = sizeof(script_content) / 4;
 
@@ -1290,7 +1431,8 @@ printf("Load Firmware End......");
 				(script_content[i * 4] << 8) | script_content[i * 4 + 1],
 				(script_content[i * 4 + 2] << 8) | script_content[i * 4 + 3]);
 	}
-
+	//load script location!//
+#if 1
 	T0_Waitms(500);
 
 	SMB0_I2C_MasterWrite(0x980d, 0x0777);
@@ -1298,8 +1440,39 @@ printf("Load Firmware End......");
 
 	T0_Waitms(500);
 	GE_set_polarity();
+#else
 
-//old firmware location!//
+#if UPDATEPARAM
+	for (i=0;i<32;i++){
+		EROM_script_content[i*4+2] = FlashRomBuff[16+i];
+	}
+	for (i=0;i<32;i++)
+	{
+//        GE_I2C2_ByteHLWrite(EROM_script_content[i*4],EROM_script_content[i*4+1],EROM_script_content[i*4+2],EROM_script_content[i*4+3]);
+		SMB0_I2C_MasterWrite(
+				(EROM_script_content[i * 4] << 8) | EROM_script_content[i * 4 + 1],
+				(EROM_script_content[i * 4 + 2] << 8) | EROM_script_content[i * 4 + 3]);
+	}
+      
+#endif
+
+    T0_Waitms(500);
+	
+    SMB0_I2C_MasterWrite(0x980d,0x0777);
+    SMB0_I2C_MasterWrite(0x980d,0x0000);//Logic Reset
+
+    T0_Waitms(500);
+#if UPDATEPARAM 	
+	GE_set_polarity(FlashRomBuff[7]);
+          GE_set_polarity_Tx(FlashRomBuff[6]);
+#else
+	GE_set_polarity();
+#endif
+    
+    GE_state_reset();//State Reset
+#endif
+
+
 
 #if 0///**/
 	//Temperature test
@@ -1319,7 +1492,7 @@ printf("Load Firmware End......");
 
 #if MY_PRINTF_EN == 1
 	DATAEE_WriteByte(1,0x66);
-	uint8_t cRes = DATAEE_ReadByte(1);
+	uint8_t cRes = FlashRomBuff(1);
 	printf("Write to eeprom:0x66, read result: 0x ");
 	printf(cRes);
 	printf("\r\n");
@@ -1330,7 +1503,10 @@ printf("Load Firmware End......");
 
 
 
-	FLASH_Read(flash_write_array, START_ADDRESS, sizeof(flash_write_array));
+	FLASH_Read(FlashRomBuff, START_ADDRESS, sizeof(FlashRomBuff));
+
+	IE_EA = 1;						  
+	tempsensor_0c = (TEMPSENSOR_0C_HIGH << 8) | TEMPSENSOR_0C_LOW;
 
 	while (1)
 	{
@@ -1363,17 +1539,17 @@ printf("Load Firmware End......");
 			break;
 
 			case 3:
-				EEPROM_Buffer[77] = flash_write_array[EEPROM_Buffer[75]];
-//				EEPROM_Buffer[77] = DATAEE_ReadByte(EEPROM_Buffer[76]);
+				EEPROM_Buffer[77] = FlashRomBuff[EEPROM_Buffer[75]];
+//				EEPROM_Buffer[77] = FlashRomBuff(EEPROM_Buffer[76]);
 				EEPROM_Buffer[78] = 0 ;    //complete
 			break;
 
 			case 4:
-				flash_write_array[EEPROM_Buffer[75]]=EEPROM_Buffer[77];
+				FlashRomBuff[EEPROM_Buffer[75]]=EEPROM_Buffer[77];
 				if(255==EEPROM_Buffer[75])
 				{
 					FLASH_PageErase(START_ADDRESS);
-					FLASH_Write(START_ADDRESS, flash_write_array, sizeof(flash_write_array)/2);
+					FLASH_Write(START_ADDRESS, FlashRomBuff, sizeof(FlashRomBuff)/2);
 				}
 				EEPROM_Buffer[78] = 0 ;    //complete
 			break;
@@ -1413,7 +1589,7 @@ printf("Load Firmware End......");
 
 
 
-#if 0
+#if 0		//read  temperature
 		x++;
 		if(x > 30000)	//history:	x>10
 		{
@@ -1473,6 +1649,23 @@ printf("Load Firmware End......");
 		EEPROM_Buffer[80] = rValue2 & 0x00ff;
 
 #endif
+#else	//read  temperature
+		if(CONV_COMPLETE)
+		{
+			temp_scaled = (((int32_t) ADC_AVG - tempsensor_0c) * SCALE) / 28;
+
+			temp_whole = temp_scaled / SCALE;
+
+			temp_frac = ABS(temp_scaled) % SCALE;
+
+#if MY_PRINTF_EN == 1
+			printf(" T = %ld.%d(C) \n", temp_whole, temp_frac);
+#endif
+
+			CONV_COMPLETE = 0;
+		}
+
+
 #endif
 	}
 
