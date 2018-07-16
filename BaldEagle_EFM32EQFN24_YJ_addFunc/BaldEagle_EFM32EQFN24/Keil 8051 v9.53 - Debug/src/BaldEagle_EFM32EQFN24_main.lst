@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 1   
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE BALDEAGLE_EFM32EQFN24_MAIN
@@ -48,7 +48,7 @@ line level    source
   33          
   34          uint8_t SMB_DATA_OUT[NUM_BYTES_WR];
   35          
-  36          uint8_t TARGET;
+  36          const uint8_t TARGET=TARGET_ADDR;
   37          
   38          #define TEMP_CAL_ADDRESS_LOW    0xFFD4
   39          #define TEMP_CAL_ADDRESS_HIGH   0xFFD5
@@ -63,7 +63,7 @@ line level    source
   48          
   49          
   50          volatile bool SMB_BUSY;
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 2   
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 2   
 
   51          
   52          volatile bool SMB_RW;
@@ -128,7 +128,7 @@ line level    source
  111          ,0x86,0xC1 ,0x00 ,0x14 ,0x87 ,0x01 ,0x00 ,0x18 ,0x44 ,0x00 ,0x48 ,0x00 ,0x9C ,0x21 ,0x00 ,0x20
  112          ,0x9C,0x21 ,0xFF ,0xE8 ,0xD4 ,0x01 ,0x70 ,0x08 ,0xD4 ,0x01 ,0x48 ,0x14 ,0xD4 ,0x01 ,0x08 ,0x00
  113          ,0xD4,0x01 ,0x10 ,0x04 ,0xD4 ,0x01 ,0x90 ,0x0C ,0xD4 ,0x01 ,0xA0 ,0x10 ,0xA9 ,0xC3 ,0x00 ,0x00
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 3   
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 3   
 
  114          ,0x94,0x6E ,0x00 ,0x00 ,0xBC ,0x23 ,0x00 ,0x00 ,0x0C ,0x00 ,0x00 ,0x16 ,0xA4 ,0x43 ,0x0F ,0x00
  115          ,0xBC,0x22 ,0x08 ,0x00 ,0x10 ,0x00 ,0x00 ,0x0E ,0x96 ,0x8E ,0x00 ,0x02 ,0x9E ,0x40 ,0x00 ,0x00
@@ -193,7 +193,7 @@ line level    source
  174          ,0x9C,0x60 ,0x00 ,0x0D ,0x03 ,0xFF ,0xFF ,0xE8 ,0xA8 ,0x60 ,0x98 ,0x10 ,0x84 ,0x21 ,0x00 ,0x00
  175          ,0x44,0x00 ,0x48 ,0x00 ,0x9C ,0x21 ,0x00 ,0x08 ,0x9C ,0x21 ,0xFF ,0xF8 ,0xA8 ,0x97 ,0x00 ,0x00
  176          ,0x9C,0xA0 ,0x00 ,0x42 ,0xD4 ,0x01 ,0x48 ,0x04 ,0x07 ,0xC0 ,0x06 ,0x7C ,0xD4 ,0x01 ,0x08 ,0x00
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 4   
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 4   
 
  177          ,0x85,0x21 ,0x00 ,0x04 ,0x84 ,0x21 ,0x00 ,0x00 ,0x44 ,0x00 ,0x48 ,0x00 ,0x9C ,0x21 ,0x00 ,0x08
  178          ,0x9C,0x21 ,0xFF ,0xF4 ,0xD4 ,0x01 ,0x10 ,0x04 ,0xA4 ,0x43 ,0x00 ,0x0F ,0xD4 ,0x01 ,0x48 ,0x08
@@ -258,7 +258,7 @@ line level    source
  237          ,0x9C,0xC0 ,0x40 ,0x00 ,0x8C ,0x62 ,0x00 ,0x0E ,0x9C ,0x63 ,0xFF ,0xF6 ,0xBC ,0x43 ,0x00 ,0x0D
  238          ,0x10,0x00 ,0x00 ,0x3B ,0x18 ,0x60 ,0x01 ,0x00 ,0xB4 ,0x60 ,0x50 ,0x01 ,0x84 ,0xA2 ,0x00 ,0x04
  239          ,0xE0,0x63 ,0x28 ,0x02 ,0x94 ,0xB7 ,0x00 ,0x10 ,0xB8 ,0x63 ,0x00 ,0x50 ,0xE4 ,0x85 ,0x18 ,0x00
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 5   
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 5   
 
  240          ,0x10,0x00 ,0x00 ,0x32 ,0xE0 ,0xB7 ,0x70 ,0x00 ,0x8C ,0xC2 ,0x00 ,0x13 ,0x9C ,0x66 ,0x00 ,0x12
  241          ,0xB8,0x63 ,0x00 ,0x02 ,0xE0 ,0x77 ,0x18 ,0x00 ,0x84 ,0x63 ,0x00 ,0x00 ,0xB8 ,0x83 ,0x00 ,0x5C
@@ -323,7 +323,7 @@ line level    source
  300          ,0x9C,0xA0 ,0x08 ,0x00 ,0x07 ,0xC0 ,0x04 ,0xD7 ,0x9C ,0xC0 ,0x0F ,0xFF ,0x00 ,0x00 ,0x02 ,0x01
  301          ,0x15,0x00 ,0x00 ,0x00 ,0x8C ,0x62 ,0x00 ,0x10 ,0xBC ,0x03 ,0x00 ,0x00 ,0x10 ,0x00 ,0x00 ,0x2E
  302          ,0x15,0x00 ,0x00 ,0x00 ,0x94 ,0x97 ,0x00 ,0x02 ,0x07 ,0xC0 ,0x04 ,0xD7 ,0xA8 ,0x6E ,0x00 ,0x00
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 6   
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 6   
 
  303          ,0xA8,0xA0 ,0xE0 ,0x00 ,0xA8 ,0xC0 ,0xF0 ,0x00 ,0xA8 ,0x6E ,0x00 ,0x00 ,0x07 ,0xC0 ,0x04 ,0xC9
  304          ,0x9C,0x80 ,0x00 ,0x3B ,0x8C ,0x62 ,0x00 ,0x10 ,0xBC ,0x03 ,0x00 ,0x00 ,0x10 ,0x00 ,0x00 ,0x0D
@@ -388,7 +388,7 @@ line level    source
  363          ,0x94,0x82 ,0x00 ,0x2E ,0xE0 ,0x84 ,0x68 ,0x02 ,0xB8 ,0xA4 ,0x00 ,0x9F ,0xE0 ,0x85 ,0x20 ,0x05
  364          ,0xE0,0x84 ,0x28 ,0x02 ,0x94 ,0xAC ,0x00 ,0x3A ,0xE5 ,0x64 ,0x28 ,0x00 ,0x10 ,0x00 ,0x00 ,0x0D
  365          ,0x15,0x00 ,0x00 ,0x00 ,0x90 ,0x82 ,0x00 ,0x31 ,0xBD ,0x84 ,0x00 ,0x00 ,0x10 ,0x00 ,0x00 ,0x08
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 7   
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 7   
 
  366          ,0x15,0x00 ,0x00 ,0x00 ,0x90 ,0x82 ,0x00 ,0x32 ,0xBD ,0x64 ,0x00 ,0x00 ,0x10 ,0x00 ,0x00 ,0x05
  367          ,0x15,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x03 ,0x9C ,0x60 ,0x00 ,0x02 ,0x9C ,0x60 ,0x00 ,0x01
@@ -453,7 +453,7 @@ line level    source
  426          ,0x00,0x00 ,0x00 ,0x05 ,0x18 ,0x60 ,0x01 ,0x00 ,0x9C ,0x60 ,0x00 ,0x30 ,0xD8 ,0x02 ,0x18 ,0x0E
  427          ,0x18,0x60 ,0x01 ,0x00 ,0x07 ,0xC0 ,0x02 ,0x5A ,0xA8 ,0x63 ,0x00 ,0x38 ,0xA8 ,0x60 ,0x98 ,0x10
  428          ,0x07,0xC0 ,0x02 ,0xB9 ,0x9C ,0x80 ,0x00 ,0x1A ,0x03 ,0xFF ,0xFC ,0x62 ,0x9D ,0xCE ,0x00 ,0x01
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 8   
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 8   
 
  429          ,0x07,0xC0 ,0x04 ,0xDC ,0xA8 ,0x6E ,0x00 ,0x00 ,0x03 ,0xFF ,0xFF ,0xF7 ,0x18 ,0x60 ,0x01 ,0x00
  430          ,0xA9,0x6B ,0xFF ,0xFF ,0x19 ,0x00 ,0x01 ,0x00 ,0xA9 ,0x08 ,0x16 ,0x84 ,0xE4 ,0x03 ,0x20 ,0x00
@@ -518,7 +518,7 @@ line level    source
  489          ,0x70,0x1A ,0xFF ,0x00 ,0x72 ,0x1A ,0xFF ,0x00 ,0x78 ,0x09 ,0x3A ,0x90 ,0x88 ,0x79 ,0x88 ,0x6C
  490          ,0x81,0x4E ,0x38 ,0x00 ,0x83 ,0x4E ,0x38 ,0x00 ,0x82 ,0x4E ,0x38 ,0x00 ,0x80 ,0x4E ,0x38 ,0x00
  491          ,0x88,0x4D ,0x80 ,0x00 ,0x88 ,0xEF ,0xB6 ,0xA0 ,0x88 ,0x88 ,0x4D ,0x7A ,0x78 ,0x19 ,0x00 ,0x05
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 9   
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 9   
 
  492          ,0x78,0x16 ,0x81 ,0xC0 ,0x88 ,0xF9 ,0x8B ,0xDA ,0x88 ,0xF8 ,0xB7 ,0x78 ,0x00 ,0x07 ,0x00 ,0x2A
  493          ,0x88,0xF1 ,0xB0 ,0x00 ,0x88 ,0xF0 ,0x67 ,0xB4 ,0x88 ,0xF5 ,0x61 ,0xE0 ,0x88 ,0xF7 ,0xA2 ,0x46
@@ -583,7 +583,7 @@ line level    source
  552                  ,0x81,0xa8 ,0x3c,0x00
  553                  ,0x82,0xa8 ,0x3c,0x00
  554                  ,0x83,0xa8 ,0x3c,0x00
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 10  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 10  
 
  555                  ,0x84,0xa8 ,0x3f,0x00
  556                  ,0x85,0xa8 ,0x3f,0x00
@@ -648,7 +648,7 @@ line level    source
  615   1        {
  616   2          PCON0 |= PCON0_IDLE__IDLE;       // Put the CPU in Idle mode while waiting
  617   2          // for conversions to complete
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 11  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 11  
 
  618   2              if(CONV_COMPLETE)
  619   2              {
@@ -713,7 +713,7 @@ line level    source
  678   1                              {
  679   2                                      if((0 == (P1&(1<<2)))|| 0 ==i--)//
  680   2                                      {
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 12  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 12  
 
  681   3                                              break;
  682   3                                      }
@@ -778,7 +778,7 @@ line level    source
  741   3                              lcnt = 0;
  742   3                              rst();
  743   3                              return false;
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 13  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 13  
 
  744   3                      }
  745   2              }
@@ -812,7 +812,7 @@ line level    source
  773          
  774          bool SMB0_I2C_MasterWrite(uint16_t RegAddr, uint16_t RegValue) {
  775   1              nWR = 4;
- 776   1              TARGET = TARGET_ADDR;
+ 776   1      //      TARGET = TARGET_ADDR;
  777   1              SMB_DATA_OUT[0] = (RegAddr >> 8) & 0xff;
  778   1              SMB_DATA_OUT[1] = RegAddr & 0xff;
  779   1              SMB_DATA_OUT[2] = (RegValue >> 8) & 0xff;
@@ -837,13 +837,13 @@ line level    source
  798          uint16_t SMB0_I2C_MasterRead(uint16_t RegAddr) {
  799   1              uint16_t sRes;
  800   1      start:  nWR = 2;
- 801   1              TARGET = TARGET_ADDR;
+ 801   1      //      TARGET = TARGET_ADDR;
  802   1              SMB_DATA_OUT[0] = (RegAddr >> 8) & 0xff;
  803   1              SMB_DATA_OUT[1] = RegAddr & 0xff;
  804   1              SMB_Write();
- 805   1              TARGET = TARGET_ADDR;
+ 805   1      //      TARGET = TARGET_ADDR;
  806   1      
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 14  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 14  
 
  807   1              if(!SMB_Read())
  808   1              {
@@ -908,7 +908,7 @@ line level    source
  867   1              //GE_I2C2_bitset(0x8561,0x1,14,1); //BR1
  868   1              //GE_I2C2_bitset(0x8661,0x1,14,1);  //BR2
  869   1              //GE_I2C2_bitset(0x8761,0x1,14,1);  //BR3
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 15  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 15  
 
  870   1      
  871   1              //Cable side  2m awg30 cable
@@ -973,7 +973,7 @@ line level    source
               
               
               
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 16  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 16  
 
               
               
@@ -1038,7 +1038,7 @@ line level    source
  993   1      ///**/  INTERRUPT_GlobalInterruptEnable();
  994   1      
  995   1              // Enable the Peripheral Interrupts
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 17  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 17  
 
  996   1      ///**/  INTERRUPT_PeripheralInterruptEnable();
  997   1      
@@ -1103,7 +1103,7 @@ line level    source
 1056   1      #if MY_PRINTF_EN == 1
 1057   1              printf("Reset done! now load fw to GE\r\n");
 1058   1      #endif
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 18  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 18  
 
 1059   1              T0_Waitms(250);  //250ms
 1060   1      #endif
@@ -1168,7 +1168,7 @@ line level    source
 1115   1              tL = enterPoint & 0xFFFF;
 1116   1              printf("%04x", tH);
 1117   1              printf("%04x", tL);
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 19  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 19  
 
 1118   1              printf("\r\n");
 1119   1      #endif
@@ -1233,7 +1233,7 @@ line level    source
                   for (i=186;i<=190;i++)     
                       {
                       if (FlashRomBuff[1]==0xff)
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 20  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 20  
 
                       {
                          iCC_BASE+=EEPROM_Buffer[i];
@@ -1298,7 +1298,7 @@ line level    source
                       //golden eagle?firmware?????20170330
                       printf("Load Firmware Start......");
               
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 21  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 21  
 
                       //load firmware
                       for (x = 0; x < section; x++) {
@@ -1363,7 +1363,7 @@ line level    source
               #endif
                                                               ;
                                       status = SMB0_I2C_MasterRead(FW_regAddr_base[0] + 15);
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 22  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 22  
 
                               }
                               if (status != 0x0000) {
@@ -1428,7 +1428,7 @@ line level    source
                       printf("%04x", tL);
                       printf("\r\n");
               #endif
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 23  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 23  
 
               
                       {       //load default:
@@ -1493,7 +1493,7 @@ line level    source
 1428   1      
 1429   1              for (i = 0; i < len_script; i++) {
 1430   2                      SMB0_I2C_MasterWrite(
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 24  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 24  
 
 1431   2                                      (script_content[i * 4] << 8) | script_content[i * 4 + 1],
 1432   2                                      (script_content[i * 4 + 2] << 8) | script_content[i * 4 + 3]);
@@ -1558,7 +1558,7 @@ line level    source
                       testReadWrite(200000, 0x8079);
               #endif
               
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 25  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 25  
 
               #if MY_PRINTF_EN == 1
                       DATAEE_WriteByte(1,0x66);
@@ -1583,56 +1583,60 @@ line level    source
 1513   2                      switch(EEPROM_Buffer[78])
 1514   2                      {
 1515   3      
-1516   3      
-1517   3                              case 2:
-1518   3                                      SMB0_I2C_MasterWrite( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75], (EEPROM_Buffer[76]<<8)| EEPROM_Buffer[
+1516   3                      //yj20180226 for bridge start
+1517   3      #if 0
+                                      case 2:
+                                              SMB0_I2C_MasterWrite( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75], (EEPROM_Buffer[76]<<8)| EEPROM_Buffer[
              -77] );
-1519   3                                      EEPROM_Buffer[78] = 0;    //complete
-1520   3                              break;
-1521   3      
-1522   3                              case 1:
-1523   3      #if MY_PRINTF_EN == 1
-1524   3                                      printf("\r\n");
-1525   3                                      printf("zhuanfa 0x");
-1526   3                                      printf("%04x",EEPROM_Buffer[74]);
-1527   3                                      printf("%04x",EEPROM_Buffer[75]);
-1528   3                                      printf("\r\n");
-1529   3      #endif
-1530   3                                      rValue = SMB0_I2C_MasterRead( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75] );
-1531   3      #if MY_PRINTF_EN == 1
-1532   3                                      printf("read: ");
-1533   3                                      printf("%04x",rValue);                  //tH);//
-1534   3                                      printf("\r\n");
-1535   3      #endif
-1536   3                                      EEPROM_Buffer[76] = rValue >> 8;
-1537   3                                      EEPROM_Buffer[77] = rValue & 0x00ff;
-1538   3                                      EEPROM_Buffer[78] = 0;    //complete
-1539   3                              break;
-1540   3      
-1541   3                              case 3:
-1542   3                                      EEPROM_Buffer[77] = FlashRomBuff[EEPROM_Buffer[75]];
-1543   3      //                              EEPROM_Buffer[77] = FlashRomBuff(EEPROM_Buffer[76]);
-1544   3                                      EEPROM_Buffer[78] = 0 ;    //complete
-1545   3                              break;
-1546   3      
-1547   3                              case 4:
-1548   3                                      FlashRomBuff[EEPROM_Buffer[75]]=EEPROM_Buffer[77];
-1549   3                                      if(255==EEPROM_Buffer[75])
-1550   3                                      {
-1551   4                                              FLASH_PageErase(START_ADDRESS);
-1552   4                                              FLASH_Write(START_ADDRESS, FlashRomBuff, sizeof(FlashRomBuff)/2);
-1553   4                                      }
-1554   3                                      EEPROM_Buffer[78] = 0 ;    //complete
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 26  
+                                              EEPROM_Buffer[78] = 0;    //complete
+                                      break;
+              
+                                      case 1:
+              #if MY_PRINTF_EN == 1
+                                              printf("\r\n");
+                                              printf("zhuanfa 0x");
+                                              printf("%04x",EEPROM_Buffer[74]);
+                                              printf("%04x",EEPROM_Buffer[75]);
+                                              printf("\r\n");
+              #endif
+                                              rValue = SMB0_I2C_MasterRead( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75] );
+              #if MY_PRINTF_EN == 1
+                                              printf("read: ");
+                                              printf("%04x",rValue);                  //tH);//
+                                              printf("\r\n");
+              #endif
+                                              EEPROM_Buffer[76] = rValue >> 8;
+                                              EEPROM_Buffer[77] = rValue & 0x00ff;
+                                              EEPROM_Buffer[78] = 0;    //complete
+                                      break;
+              #else
+1542   3      
+1543   3      #endif
+1544   3                      //yj20180226 for bridge end
+1545   3                              case 3:
+1546   3                                      EEPROM_Buffer[77] = FlashRomBuff[EEPROM_Buffer[75]];
+1547   3      //                              EEPROM_Buffer[77] = FlashRomBuff(EEPROM_Buffer[76]);
+1548   3                                      EEPROM_Buffer[78] = 0 ;    //complete
+1549   3                              break;
+1550   3      
+1551   3                              case 4:
+1552   3                                      FlashRomBuff[EEPROM_Buffer[75]]=EEPROM_Buffer[77];
+1553   3                                      if(255==EEPROM_Buffer[75])
+1554   3                                      {
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 26  
 
-1555   3                              break;
-1556   3      
-1557   3                              default:
-1558   3      
+1555   4                                              FLASH_PageErase(START_ADDRESS);
+1556   4                                              FLASH_Write(START_ADDRESS, FlashRomBuff, sizeof(FlashRomBuff)/2);
+1557   4                                      }
+1558   3                                      EEPROM_Buffer[78] = 0 ;    //complete
 1559   3                              break;
-1560   3                      }
-1561   2      
-1562   2      #if 0
+1560   3      
+1561   3                              default:
+1562   3      
+1563   3                              break;
+1564   3                      }
+1565   2      
+1566   2      #if 0
                               if( EEPROM_Buffer[78] == 2 )                            //write  xxxxxx11;2
                               {
                                       GE_I2C2_ByteHLWrite( EEPROM_Buffer[74], EEPROM_Buffer[75], EEPROM_Buffer[76], EEPROM_Buffer[77] );
@@ -1659,10 +1663,10 @@ line level    source
                                       EEPROM_Buffer[78] = 0;    //complete
                               }
               #endif
-1589   2      
-1590   2      
-1591   2      
-1592   2      #if 0           //read  temperature
+1593   2      
+1594   2      
+1595   2      
+1596   2      #if 0           //read  temperature
                               x++;
                               if(x > 30000)   //history:      x>10
                               {
@@ -1684,12 +1688,12 @@ line level    source
                                        EN_1V8 = 1;
                                        }*/
                                       FVRCON = 0xB5;   //4VT
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 27  
+
                                       T0_Waitms(10);
                                       ADC_StartConversion(AN1_Channel);
                                       while(!ADC_IsConversionDone());
                                       convertedValue_HighRange = ADC_GetConversionResult();
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 27  
-
                                       FVRCON = 0xA5;//2VT
                                       T0_Waitms(10);
                                       ADC_StartConversion(AN1_Channel);
@@ -1725,137 +1729,139 @@ line level    source
               
               #endif
               #else   //read  temperature
-1653   2                      if(CONV_COMPLETE)
-1654   2                      {
-1655   3                              temp_scaled = (((int32_t) ADC_AVG - tempsensor_0c) * SCALE) / 28;
-1656   3      
-1657   3                              temp_whole = temp_scaled / SCALE;
-1658   3      
-1659   3                              temp_frac = ABS(temp_scaled) % SCALE;
+1657   2                      if(CONV_COMPLETE)
+1658   2                      {
+1659   3                              temp_scaled = (((int32_t) ADC_AVG - tempsensor_0c) * SCALE) / 28;
 1660   3      
-1661   3      #if MY_PRINTF_EN == 1
-1662   3                              printf(" T = %ld.%d(C) \n", temp_whole, temp_frac);
-1663   3      #endif
+1661   3                              temp_whole = temp_scaled / SCALE;
+1662   3      
+1663   3                              temp_frac = ABS(temp_scaled) % SCALE;
 1664   3      
-1665   3                              CONV_COMPLETE = 0;
-1666   3                      }
-1667   2      
-1668   2      
-1669   2      #endif
-1670   2              }
-1671   1      
-1672   1      
-1673   1              while(1);
-1674   1      
+1665   3      #if MY_PRINTF_EN == 1
+1666   3                              printf(" T = %ld.%d(C) \n", temp_whole, temp_frac);
+1667   3      #endif
+1668   3      
+1669   3                              CONV_COMPLETE = 0;
+1670   3                      }
+1671   2      
+1672   2      
+1673   2      #endif
+1674   2              }
 1675   1      
 1676   1      
-1677   1      }
+1677   1              while(1);
+1678   1      
+1679   1      
+1680   1      
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 28  
+
+1681   1      }
 *** WARNING C280 IN LINE 1010 OF D:\WorkSpace\MyCode\SYNC\BaldEagle_EFM32EQFN24_YJ_addFunc\BaldEagle_EFM32EQFN24\src\Bal
              -dEagle_EFM32EQFN24_main.c: 'x': unreferenced local variable
 *** WARNING C280 IN LINE 1013 OF D:\WorkSpace\MyCode\SYNC\BaldEagle_EFM32EQFN24_YJ_addFunc\BaldEagle_EFM32EQFN24\src\Bal
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 28  
-
              -dEagle_EFM32EQFN24_main.c: 'status': unreferenced local variable
 *** WARNING C280 IN LINE 1016 OF D:\WorkSpace\MyCode\SYNC\BaldEagle_EFM32EQFN24_YJ_addFunc\BaldEagle_EFM32EQFN24\src\Bal
              -dEagle_EFM32EQFN24_main.c: 'mdioData': unreferenced local variable
-1678          
-1679          
-1680          
-1681          void main(void) {
-1682   1              volatile uint8_t data_count;
-1683   1              uint16_t i;
-1684   1              volatile uint16_t sI2C_rd;
-1685   1      
-1686   1      //      test_tempsensor();
-1687   1      
-1688   1      //      flash_test();
+*** WARNING C280 IN LINE 1020 OF D:\WorkSpace\MyCode\SYNC\BaldEagle_EFM32EQFN24_YJ_addFunc\BaldEagle_EFM32EQFN24\src\Bal
+             -dEagle_EFM32EQFN24_main.c: 'rValue': unreferenced local variable
+1682          
+1683          
+1684          
+1685          void main(void) {
+1686   1              volatile uint8_t data_count;
+1687   1              uint16_t i;
+1688   1              volatile uint16_t sI2C_rd;
 1689   1      
-1690   1              enter_BusFreeMode_from_RESET();
-1691   1              UART1_initStdio(72000000, 115200);              //YJ20180209
-1692   1      //      if(0==(RSTSRC&(0x1<<4)))
-1693   1      //              RSTSRC|=0x1<<4;
-1694   1      //      DISP_EN = DISP_BC_DRIVEN;
-1695   1      
-1696   1      
-1697   1              while (!SDA) {
-1698   2                      XBR2 = XBR2_XBARE__ENABLED;
-1699   2                      SCL = 0;
-1700   2                      for (i = 0; i < 255; i++)
-1701   2                              ;
-1702   2                      SCL = 1;
-1703   2                      while (!SCL)
-1704   2                              ;
-1705   2                      for (i = 0; i < 10; i++)
-1706   2                              ;
-1707   2                      XBR2 = XBR2_XBARE__DISABLED;
-1708   2              }
-1709   1      
-1710   1              enter_DefaultMode_from_BusFreeMode();
-1711   1      
-1712   1      //      LED1 = LED_OFF;
+1690   1      //      test_tempsensor();
+1691   1      
+1692   1      //      flash_test();
+1693   1      
+1694   1              enter_BusFreeMode_from_RESET();
+1695   1              UART1_initStdio(72000000, 115200);              //YJ20180209
+1696   1      //      if(0==(RSTSRC&(0x1<<4)))
+1697   1      //              RSTSRC|=0x1<<4;
+1698   1      //      DISP_EN = DISP_BC_DRIVEN;
+1699   1      
+1700   1      
+1701   1              while (!SDA) {
+1702   2                      XBR2 = XBR2_XBARE__ENABLED;
+1703   2                      SCL = 0;
+1704   2                      for (i = 0; i < 255; i++)
+1705   2                              ;
+1706   2                      SCL = 1;
+1707   2                      while (!SCL)
+1708   2                              ;
+1709   2                      for (i = 0; i < 10; i++)
+1710   2                              ;
+1711   2                      XBR2 = XBR2_XBARE__DISABLED;
+1712   2              }
 1713   1      
-1714   1      
+1714   1              enter_DefaultMode_from_BusFreeMode();
 1715   1      
-1716   1              NUM_ERRORS = 0;
-1717   1              {
-1718   2                      IE_EA = 0;
-1719   2                      SFRPAGE = PG3_PAGE;
-1720   2                      I2C0CN0 &= ~I2C0CN0_BUSY__BMASK;
-1721   2                  I2C0CN0 |= I2C0FCN0_RFLSH__FLUSH | I2C0FCN0_TFLSH__FLUSH;
-1722   2      
-1723   2                      IE_EA = 1;
-1724   2              }
-1725   1      
-1726   1      
-1727   1      //      test_tempsensor();
-1728   1      
+1716   1      //      LED1 = LED_OFF;
+1717   1      
+1718   1      
+1719   1      
+1720   1              NUM_ERRORS = 0;
+1721   1              {
+1722   2                      IE_EA = 0;
+1723   2                      SFRPAGE = PG3_PAGE;
+1724   2                      I2C0CN0 &= ~I2C0CN0_BUSY__BMASK;
+1725   2                  I2C0CN0 |= I2C0FCN0_RFLSH__FLUSH | I2C0FCN0_TFLSH__FLUSH;
+1726   2      
+1727   2                      IE_EA = 1;
+1728   2              }
 1729   1      
 1730   1      
-1731   1      
-1732   1              PIC_MAIN();
+1731   1      //      test_tempsensor();
+1732   1      
 1733   1      
 1734   1      
 1735   1      
-1736   1              T0_Waitms(500);
-1737   1      
-C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/23/2018 13:48:45 PAGE 29  
+C51 COMPILER V9.53.0.0   BALDEAGLE_EFM32EQFN24_MAIN                                        02/26/2018 13:44:17 PAGE 29  
 
+1736   1              PIC_MAIN();
+1737   1      
 1738   1      
-1739   1      }
-*** WARNING C280 IN LINE 1682 OF D:\WorkSpace\MyCode\SYNC\BaldEagle_EFM32EQFN24_YJ_addFunc\BaldEagle_EFM32EQFN24\src\Bal
+1739   1      
+1740   1              T0_Waitms(500);
+1741   1      
+1742   1      
+1743   1      }
+*** WARNING C280 IN LINE 1686 OF D:\WorkSpace\MyCode\SYNC\BaldEagle_EFM32EQFN24_YJ_addFunc\BaldEagle_EFM32EQFN24\src\Bal
              -dEagle_EFM32EQFN24_main.c: 'data_count': unreferenced local variable
-*** WARNING C280 IN LINE 1684 OF D:\WorkSpace\MyCode\SYNC\BaldEagle_EFM32EQFN24_YJ_addFunc\BaldEagle_EFM32EQFN24\src\Bal
+*** WARNING C280 IN LINE 1688 OF D:\WorkSpace\MyCode\SYNC\BaldEagle_EFM32EQFN24_YJ_addFunc\BaldEagle_EFM32EQFN24\src\Bal
              -dEagle_EFM32EQFN24_main.c: 'sI2C_rd': unreferenced local variable
-1740          
-1741          void T0_Waitms(uint8_t ms) {
-1742   1              TCON &= ~0x30;
-1743   1              TMOD &= ~0x0f;
-1744   1              TMOD |= 0x01;
-1745   1      
-1746   1              CKCON0 |= 0x04;
-1747   1      
-1748   1              while (ms) {
-1749   2                      TCON_TR0 = 0;
-1750   2                      TH0 = ((-SYSCLK / 1000) >> 8);
-1751   2                      TL0 = ((-SYSCLK / 1000) & 0xFF);
-1752   2                      TCON_TF0 = 0;
-1753   2                      TCON_TR0 = 1;
-1754   2                      while (!TCON_TF0)
-1755   2                              ;
-1756   2                      ms--;
-1757   2              }
-1758   1      
-1759   1              TCON_TR0 = 0;
-1760   1      }
-1761          
-1762          
+1744          
+1745          void T0_Waitms(uint8_t ms) {
+1746   1              TCON &= ~0x30;
+1747   1              TMOD &= ~0x0f;
+1748   1              TMOD |= 0x01;
+1749   1      
+1750   1              CKCON0 |= 0x04;
+1751   1      
+1752   1              while (ms) {
+1753   2                      TCON_TR0 = 0;
+1754   2                      TH0 = ((-SYSCLK / 1000) >> 8);
+1755   2                      TL0 = ((-SYSCLK / 1000) & 0xFF);
+1756   2                      TCON_TF0 = 0;
+1757   2                      TCON_TR0 = 1;
+1758   2                      while (!TCON_TF0)
+1759   2                              ;
+1760   2                      ms--;
+1761   2              }
+1762   1      
+1763   1              TCON_TR0 = 0;
+1764   1      }
+1765          
+1766          
 *** WARNING C294 IN LINE 1081 OF D:\WorkSpace\MyCode\SYNC\BaldEagle_EFM32EQFN24_YJ_addFunc\BaldEagle_EFM32EQFN24\src\Bal
              -dEagle_EFM32EQFN24_main.c: unreachable code
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   3630    ----
-   CONSTANT SIZE    =   7347    ----
+   CODE SIZE        =   3420    ----
+   CONSTANT SIZE    =   7329    ----
    XDATA SIZE       =    145     171
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
@@ -1868,4 +1874,4 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  9 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  10 WARNING(S),  0 ERROR(S)

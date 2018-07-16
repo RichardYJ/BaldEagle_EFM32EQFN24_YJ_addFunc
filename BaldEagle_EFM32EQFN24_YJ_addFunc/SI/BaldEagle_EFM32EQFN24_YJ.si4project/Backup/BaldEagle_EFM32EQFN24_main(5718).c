@@ -886,7 +886,7 @@ void GE_set_polarity_Tx(uint8_t prty)
 	uint8_t tmp= prty;
 	uint16_t reg=0x80a0;
 
-	for( I = 0;i < 8; i++ )
+	for( i = 0;i < 8; i++ )
 	{
 		if(tmp & 0x01)  GE_I2C2_bitset(reg|(i<<8),0x1,7,1);  //  addr = 0x80A0+0x0i00,  [7] =  1 = reverse
 		tmp = tmp >> 1;     //0x80A0 -> 0x87A0  B0 -> A3

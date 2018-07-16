@@ -33,7 +33,7 @@ uint8_t SMB_DATA_IN[NUM_BYTES_RD];
 
 uint8_t SMB_DATA_OUT[NUM_BYTES_WR];
 
-uint8_t TARGET;
+const uint8_t TARGET=TARGET_ADDR;
 
 #define TEMP_CAL_ADDRESS_LOW    0xFFD4
 #define TEMP_CAL_ADDRESS_HIGH   0xFFD5
@@ -773,7 +773,7 @@ bool SMB_Read(void) {
 
 bool SMB0_I2C_MasterWrite(uint16_t RegAddr, uint16_t RegValue) {
 	nWR = 4;
-	TARGET = TARGET_ADDR;
+//	TARGET = TARGET_ADDR;
 	SMB_DATA_OUT[0] = (RegAddr >> 8) & 0xff;
 	SMB_DATA_OUT[1] = RegAddr & 0xff;
 	SMB_DATA_OUT[2] = (RegValue >> 8) & 0xff;
@@ -798,11 +798,11 @@ bool SMB0_I2C_MasterWrite(uint16_t RegAddr, uint16_t RegValue) {
 uint16_t SMB0_I2C_MasterRead(uint16_t RegAddr) {
 	uint16_t sRes;
 start:	nWR = 2;
-	TARGET = TARGET_ADDR;
+//	TARGET = TARGET_ADDR;
 	SMB_DATA_OUT[0] = (RegAddr >> 8) & 0xff;
 	SMB_DATA_OUT[1] = RegAddr & 0xff;
 	SMB_Write();
-	TARGET = TARGET_ADDR;
+//	TARGET = TARGET_ADDR;
 
 	if(!SMB_Read())
 	{
@@ -1513,7 +1513,8 @@ printf("Load Firmware End......");
 		switch(EEPROM_Buffer[78])
 		{
 
-
+		//yj20180226 for bridge start
+#if 0
 			case 2:
 				SMB0_I2C_MasterWrite( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75], (EEPROM_Buffer[76]<<8)| EEPROM_Buffer[77] );
 				EEPROM_Buffer[78] = 0;	  //complete
@@ -1537,7 +1538,10 @@ printf("Load Firmware End......");
 				EEPROM_Buffer[77] = rValue & 0x00ff;
 				EEPROM_Buffer[78] = 0;	  //complete
 			break;
+#else
 
+#endif
+		//yj20180226 for bridge end
 			case 3:
 				EEPROM_Buffer[77] = FlashRomBuff[EEPROM_Buffer[75]];
 //				EEPROM_Buffer[77] = FlashRomBuff(EEPROM_Buffer[76]);

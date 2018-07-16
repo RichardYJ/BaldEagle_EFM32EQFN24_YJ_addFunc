@@ -701,7 +701,7 @@ SI_INTERRUPT (I2C0_ISR, I2C0_IRQn)
 
 	uint8_t SAVE_SFRPAGE;
 	bool EA_SAVE = IE_EA;
-//	bool bBridge;
+	bool bBridge;
 	IE_EA = 0;
 	SAVE_SFRPAGE = SFRPAGE;
 	SFRPAGE = 0x20;

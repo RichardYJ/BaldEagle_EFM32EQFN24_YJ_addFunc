@@ -48,14 +48,12 @@ extern uint8_t SMB_DATA_IN[NUM_BYTES_RD];
 
 extern uint8_t SMB_DATA_OUT[NUM_BYTES_WR];
 
-extern const uint8_t TARGET;                
+extern uint8_t TARGET;                
 
 extern volatile bool SMB_BUSY;        
 extern volatile bool SMB_RW;          
 extern uint16_t NUM_ERRORS;           
 
-extern bool SMB0_I2C_MasterWrite(uint16_t RegAddr, uint16_t RegValue);
-extern uint16_t SMB0_I2C_MasterRead(uint16_t RegAddr);
 
 #endif // SMBUS_MASTER_MULTIBYTE_H_
 //-----------------------------------------------------------------------------
