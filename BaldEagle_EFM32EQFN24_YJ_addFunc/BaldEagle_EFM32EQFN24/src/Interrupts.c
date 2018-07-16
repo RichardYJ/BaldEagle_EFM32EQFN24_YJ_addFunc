@@ -702,7 +702,7 @@ SI_INTERRUPT (I2C0_ISR, I2C0_IRQn)
 	uint8_t SAVE_SFRPAGE;
 	bool EA_SAVE = IE_EA;
 //	bool bBridge;
-	IE_EA = 0;
+//	IE_EA = 0;
 	SAVE_SFRPAGE = SFRPAGE;
 	SFRPAGE = 0x20;
 
@@ -806,14 +806,14 @@ SI_INTERRUPT (I2C0_ISR, I2C0_IRQn)
 				//yj20180226 for bridge start
 				if(78==(eepromAddress-1)&&(I2C1_slaveWriteData<3))
 				{
-					if(1==I2C1_slaveWriteData){
+					if(2==I2C1_slaveWriteData){
 						SMB0_I2C_MasterWrite( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75], (EEPROM_Buffer[76]<<8)| EEPROM_Buffer[77] );
 						EEPROM_Buffer[78] = 0;	  //complete
 					}
 					else{
 						
 						uint16_t rValue;
-						SMB0_I2C_MasterRead( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75] );
+						rValue = SMB0_I2C_MasterRead( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75] );
 						EEPROM_Buffer[76] = rValue >> 8;
 						EEPROM_Buffer[77] = rValue & 0x00ff;
 						EEPROM_Buffer[78] = 0;	  //complete
@@ -830,7 +830,7 @@ SI_INTERRUPT (I2C0_ISR, I2C0_IRQn)
 
 	I2C0STAT &= ~I2C0STAT_I2C0INT__BMASK;
 	SFRPAGE = SAVE_SFRPAGE;
-	IE_EA = EA_SAVE;
+//	IE_EA = EA_SAVE;
 
 }
 

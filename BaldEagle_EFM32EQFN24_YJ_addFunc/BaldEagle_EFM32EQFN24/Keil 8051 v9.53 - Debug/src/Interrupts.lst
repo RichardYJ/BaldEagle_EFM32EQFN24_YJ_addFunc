@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 1   
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE INTERRUPTS
@@ -63,7 +63,7 @@ line level    source
   49          {
   50          17,  
   51          7,
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 2   
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 2   
 
   52          0,
   53          0,
@@ -128,7 +128,7 @@ line level    source
  112          0,
  113          0,
  114          0,
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 3   
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 3   
 
  115          0,
  116          0,
@@ -193,7 +193,7 @@ line level    source
  175          0,
  176          0,
  177          0,  //page0
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 4   
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 4   
 
  178          17,  
  179          204,
@@ -258,7 +258,7 @@ line level    source
  238          0,  //wavelength tolerance
  239          0,
  240          0,
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 5   
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 5   
 
  241          54,
  242          25,
@@ -323,7 +323,7 @@ line level    source
  301          0,
  302          0,
  303          0,
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 6   
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 6   
 
  304          0,
  305          0,   //page1
@@ -388,7 +388,7 @@ line level    source
  364          0,
  365          0,
  366          0,
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 7   
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 7   
 
  367          0,
  368          0,
@@ -453,7 +453,7 @@ line level    source
  427          0,
  428          0,
  429          0,
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 8   
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 8   
 
  430          0,
  431          0,
@@ -518,7 +518,7 @@ line level    source
  490          0,
  491          0,
  492          0,
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 9   
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 9   
 
  493          0,
  494          0,
@@ -583,7 +583,7 @@ line level    source
  553          0,
  554          0,
  555          0,
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 10  
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 10  
 
  556          0,
  557          0,
@@ -648,7 +648,7 @@ line level    source
  616          3,
  617          26,
  618          23,
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 11  
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 11  
 
  619          112,
  620          5,
@@ -713,7 +713,7 @@ line level    source
  679          0,
  680          0,
  681          0,
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 12  
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 12  
 
  682          0,
  683          0,
@@ -738,7 +738,7 @@ line level    source
  702   1              uint8_t SAVE_SFRPAGE;
  703   1              bool EA_SAVE = IE_EA;
  704   1      //      bool bBridge;
- 705   1              IE_EA = 0;
+ 705   1      //      IE_EA = 0;
  706   1              SAVE_SFRPAGE = SFRPAGE;
  707   1              SFRPAGE = 0x20;
  708   1      
@@ -778,7 +778,7 @@ line level    source
  742   3      
  743   3                              if(sizeof(EEPROM_Buffer) <= eepromAddress)
  744   3                              {
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 13  
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 13  
 
  745   4                                      eepromAddress = 0;
  746   4                              }
@@ -843,10 +843,10 @@ line level    source
  805   5                                      }
  806   4                                      //yj20180226 for bridge start
  807   4                                      if(78==(eepromAddress-1)&&(I2C1_slaveWriteData<3))
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 14  
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 14  
 
  808   4                                      {
- 809   5                                              if(1==I2C1_slaveWriteData){
+ 809   5                                              if(2==I2C1_slaveWriteData){
  810   6                                                      SMB0_I2C_MasterWrite( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75], (EEPROM_Buffer[76]<<8)| EEPROM_Buffe
              -r[77] );
  811   6                                                      EEPROM_Buffer[78] = 0;    //complete
@@ -854,7 +854,7 @@ line level    source
  813   5                                              else{
  814   6                                                      
  815   6                                                      uint16_t rValue;
- 816   6                                                      SMB0_I2C_MasterRead( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75] );
+ 816   6                                                      rValue = SMB0_I2C_MasterRead( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75] );
  817   6                                                      EEPROM_Buffer[76] = rValue >> 8;
  818   6                                                      EEPROM_Buffer[77] = rValue & 0x00ff;
  819   6                                                      EEPROM_Buffer[78] = 0;    //complete
@@ -871,7 +871,7 @@ line level    source
  830   1      
  831   1              I2C0STAT &= ~I2C0STAT_I2C0INT__BMASK;
  832   1              SFRPAGE = SAVE_SFRPAGE;
- 833   1              IE_EA = EA_SAVE;
+ 833   1      //      IE_EA = EA_SAVE;
  834   1      
  835   1      }
  836          
@@ -908,7 +908,7 @@ line level    source
  867   6      
  868   6                                                      SMB0DAT = SMB_DATA_OUT[sent_byte_counter-1];
  869   6                                                      sent_byte_counter++;
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 15  
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 15  
 
  870   6                                              }
  871   5                                              else
@@ -973,7 +973,7 @@ line level    source
  930   2                      SMB0CN0_STO = 0;
  931   2                      SMB0CN0_ACK = 0;
  932   2      
-C51 COMPILER V9.53.0.0   INTERRUPTS                                                        02/27/2018 11:24:45 PAGE 16  
+C51 COMPILER V9.53.0.0   INTERRUPTS                                                        03/05/2018 14:56:55 PAGE 16  
 
  933   2                      SMB_BUSY = 0;
  934   2      
@@ -1019,7 +1019,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    899    ----
+   CODE SIZE        =    901    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =    648       5
    PDATA SIZE       =   ----    ----

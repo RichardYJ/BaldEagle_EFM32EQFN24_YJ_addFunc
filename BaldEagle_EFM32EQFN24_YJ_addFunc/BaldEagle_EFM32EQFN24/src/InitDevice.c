@@ -676,12 +676,35 @@ extern void INTERRUPT_0_enter_DefaultMode_from_BusFreeMode(void) {
 	// [EIE2 - Extended Interrupt Enable 2]$
 
 	// $[EIP1H - Extended Interrupt Priority 1 High]
+	/***********************************************************************
+	 - ADC0 Conversion Complete interrupt priority MSB set to low
+	 - ADC0 Window interrupt priority MSB set to low
+	 - CP0 interrupt priority MSB set to low
+	 - CP1 interrupt priority MSB set to low
+	 - Port Match interrupt priority MSB set to low
+	 - PCA0 interrupt priority MSB set to low
+	 - SMB0 interrupt priority MSB set to high
+	 - Timer 3 interrupt priority MSB set to low
+	 ***********************************************************************/
+	SFRPAGE = 0x10;
+	EIP1H = EIP1H_PHADC0__LOW | EIP1H_PHWADC0__LOW | EIP1H_PHCP0__LOW
+			| EIP1H_PHCP1__LOW | EIP1H_PHMAT__LOW | EIP1H_PHPCA0__LOW
+			| EIP1H_PHSMB0__HIGH | EIP1H_PHT3__LOW;
 	// [EIP1H - Extended Interrupt Priority 1 High]$
 
 	// $[EIP1 - Extended Interrupt Priority 1 Low]
 	// [EIP1 - Extended Interrupt Priority 1 Low]$
 
 	// $[EIP2 - Extended Interrupt Priority 2]
+	/***********************************************************************
+	 - CL0 interrupt priority LSB set to low
+	 - I2C0 Slave interrupt priority LSB set to high
+	 - Timer 4 interrupt priority LSB set to low
+	 - Timer 5 interrupt priority LSB set to low
+	 - UART1 interrupt priority LSB set to low
+	 ***********************************************************************/
+	EIP2 = EIP2_PCL0__LOW | EIP2_PI2C0__HIGH | EIP2_PT4__LOW | EIP2_PT5__LOW
+			| EIP2_PS1__LOW;
 	// [EIP2 - Extended Interrupt Priority 2]$
 
 	// $[EIP2H - Extended Interrupt Priority 2 High]
@@ -698,6 +721,7 @@ extern void INTERRUPT_0_enter_DefaultMode_from_BusFreeMode(void) {
 	 - Disable Timer 2 interrupt
 	 - Disable UART0 interrupt
 	 ***********************************************************************/
+	SFRPAGE = 0x00;
 	IE = IE_EA__ENABLED | IE_EX0__DISABLED | IE_EX1__DISABLED
 			| IE_ESPI0__DISABLED | IE_ET0__DISABLED | IE_ET1__DISABLED
 			| IE_ET2__DISABLED | IE_ES0__DISABLED;

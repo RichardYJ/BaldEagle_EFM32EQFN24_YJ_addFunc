@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   EFM8LB1_FLASH                                                     02/23/2018 13:48:46 PAGE 1   
+C51 COMPILER V9.53.0.0   EFM8LB1_FLASH                                                     03/05/2018 13:36:18 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE EFM8LB1_FLASH
@@ -63,7 +63,7 @@ line level    source
   49          //                    valid range is from 0x0000 to 0x0FFF for 4 kB devices
   50          //                    valid range is from 0x0000 to 0x07FF for 2 kB devices
   51          //
-C51 COMPILER V9.53.0.0   EFM8LB1_FLASH                                                     02/23/2018 13:48:46 PAGE 2   
+C51 COMPILER V9.53.0.0   EFM8LB1_FLASH                                                     03/05/2018 13:36:18 PAGE 2   
 
   52          // This routine reads a <byte> from the linear flash address <addr>.
   53          //
@@ -128,7 +128,7 @@ line level    source
  112   1      
  113   1         VDM0CN = 0x80;                      // Enable VDD monitor
  114   1      
-C51 COMPILER V9.53.0.0   EFM8LB1_FLASH                                                     02/23/2018 13:48:46 PAGE 3   
+C51 COMPILER V9.53.0.0   EFM8LB1_FLASH                                                     03/05/2018 13:36:18 PAGE 3   
 
  115   1         RSTSRC = 0x02;                      // Enable VDD monitor as a reset source
  116   1         *pwrite = 0;                        // Initiate page erase

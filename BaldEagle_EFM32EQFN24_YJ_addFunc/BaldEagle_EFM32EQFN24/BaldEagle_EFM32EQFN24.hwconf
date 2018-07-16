@@ -35,6 +35,8 @@
     <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptenable1.enabletimer3interrupt" value="Enabled"/>
     <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptenable2.enablei2c0slaveinterrupt" value="Enabled"/>
     <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptenable2.enabletimer4interrupt" value="Enabled"/>
+    <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptpriority1high.smbussmb0prioritycontrolmsbinterrupt" value="High"/>
+    <property object="INTERRUPT_0" propertyId="interrupt.extendedinterruptpriority2.i2c0slaveprioritycontrollsbinterrupt" value="High"/>
     <property object="INTERRUPT_0" propertyId="interrupt.interruptenable.enableallinterrupts" value="Enabled"/>
     <property object="P0.0" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="P0.1" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>

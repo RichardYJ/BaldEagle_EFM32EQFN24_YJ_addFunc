@@ -1,30 +1,27 @@
----- SMB0_I2C_MasterWrite Matches (29 in 2 files) ----
-BaldEagle_EFM32EQFN24_main.c (src) line 774 : bool SMB0_I2C_MasterWrite(uint16_t RegAddr, uint16_t RegValue) {
-SMB0_I2C_MasterWrite in BaldEagle_EFM32EQFN24_main.c (src) : 		printf("SMB0_I2C_MasterWrite  ERROR!!!!!!");
-GE_I2C2_bitset in BaldEagle_EFM32EQFN24_main.c (src) : 	SMB0_I2C_MasterWrite(addr, readout);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(0x9811, 0xabcd);		//software reset
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(0x9811, 0xabcd);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(0x9f0f, 0x800c);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 	SMB0_I2C_MasterWrite(0x980d, 0x0888);		//software reset
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 	SMB0_I2C_MasterWrite(0x980d, 0x0000);		//software reset
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(0x9811, 0xabcd);		//software reset
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(FW_regAddr_base[0] + 12, ramAddr >> 16);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(FW_regAddr_base[0] + 13, ramAddr & 0xFFFF);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			SMB0_I2C_MasterWrite(FW_regAddr_base[0] + i, mdioData);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(FW_regAddr_base[0] + 14, (-checkSum) & 0xFFFF);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(FW_regAddr_base[0] + 15, 0x800C);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 	SMB0_I2C_MasterWrite(FW_regAddr_base[0] + 12, enterPoint >> 16);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 	SMB0_I2C_MasterWrite(FW_regAddr_base[0] + 13, enterPoint & 0xFFFF);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 	SMB0_I2C_MasterWrite(FW_regAddr_base[0] + 14, (-checkSum) & 0xFFFF);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 	SMB0_I2C_MasterWrite(FW_regAddr_base[0] + 15, 0x4000);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(0x9818, 0x5000);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(0x9818, 0x5020);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite( 0x9818,0x5030);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 	SMB0_I2C_MasterWrite(0x980d, 0x0777);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 	SMB0_I2C_MasterWrite(0x980d, 0x0000);	//Logic Reset
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterWrite(
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) :     SMB0_I2C_MasterWrite(0x980d,0x0777);
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) :     SMB0_I2C_MasterWrite(0x980d,0x0000);//Logic Reset
-PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 				SMB0_I2C_MasterWrite( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75], (EEPROM_Buffer[76]<<8)| EEPROM_Buffer[77] );
-SI_INTERRUPT in Interrupts.c (src) : 						SMB0_I2C_MasterWrite( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75], (EEPROM_Buffer[76]<<8)| EEPROM_Buffer[77] )
+---- SMB0_I2C_MasterRead Matches (26 in 3 files) ----
+BaldEagle_EFM32EQFN24_main.c (src) line 799 : uint16_t SMB0_I2C_MasterRead(uint16_t RegAddr) {
+SMB0_I2C_MasterRead in BaldEagle_EFM32EQFN24_main.c (src) : 		printf("SMB0_I2C_MasterRead  ERROR!!!!!!");
+GE_I2C2_bitset in BaldEagle_EFM32EQFN24_main.c (src) : 	uint16_t readout = SMB0_I2C_MasterRead(addr);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0x9811);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0x9811);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			TotalError = SMB0_I2C_MasterRead(0x9f0f);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		TotalError = SMB0_I2C_MasterRead(0x9811);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			//SMB0_I2C_MasterRead(FW_regAddr_base[0] + i);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		SMB0_I2C_MasterRead(FW_regAddr_base[0] + 14);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(FW_regAddr_base[0] + 15);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			status = SMB0_I2C_MasterRead(FW_regAddr_base[0] + 15);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(FW_regAddr_base[0] + 15);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			status = SMB0_I2C_MasterRead(FW_regAddr_base[0] + 15);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 	status = SMB0_I2C_MasterRead(0x9814);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 			status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 		status = SMB0_I2C_MasterRead(0x9818);
+PIC_MAIN in BaldEagle_EFM32EQFN24_main.c (src) : 				rValue = SMB0_I2C_MasterRead( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75] );
+EFM8LB1_SMBus_MasterMultibyte.h (inc) line 58 : extern uint16_t SMB0_I2C_MasterRead(uint16_t RegAddr);
+SI_INTERRUPT in Interrupts.c (src) : 						SMB0_I2C_MasterRead( (EEPROM_Buffer[74]<<8)|EEPROM_Buffer[75] );
